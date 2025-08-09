@@ -9,6 +9,9 @@ CHUNK = 1024
 RATE = 44100
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# Create a UDP socket using IPv4.
+# Layer mapping: Application uses OS API → Transport = UDP (SOCK_DGRAM), Address family = IPv4 (AF_INET).
+# OS allocates a socket object. No port bound explicitly yet — the kernel will assign an ephemeral source port on first send.
 
 # Counter for debugging
 packet_count = 0
